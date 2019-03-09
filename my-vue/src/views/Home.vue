@@ -2,8 +2,8 @@
 
 	<div id="index">
 			<search-bar></search-bar>
-		<h1>京东首页</h1>
-
+		<!--<h1>京东首页</h1>-->
+			<div style="height: 20rem; background-color: cornflowerblue;"></div>
 	</div>
 
 </template>

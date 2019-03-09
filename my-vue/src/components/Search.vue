@@ -1,11 +1,10 @@
 <template>
 
-	<div class="search-bar flex">
+	<div class="search-bar flex" :class="{fixed:isFixed}">
 		<div class="category"></div>
 		<div class="search-form flex-item">
 			<span class="jd-icon"></span>
 			<input type="text" />
-
 		</div>
 		<div class="login">登录</div>
 	</div>
@@ -15,23 +14,38 @@
 <script>
 	export default {
 		data: function() {
-			return {};
+			return {
+				isFixed: false
+			};
 		},
 		methods: {},
 		props: [],
 		watch: {},
 		computed: {},
+		created() {
+			window.onscroll = (e) => {
+				var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				if(scrollTop > 20) {
+					this.isFixed = true;
+				} else {
+					this.isFixed = false;
+				}
+			}
+		}
 	}
 </script>
 
 <style scoped="scoped">
 	.search-bar {
 		height: 0.88rem;
-		background-color: #e43130;
 		position: fixed;
 		width: 100%;
 		top: 0px;
 		left: 0px;
+	}
+	
+	.fixed {
+		background-color: #e43130;
 	}
 	
 	.category {
