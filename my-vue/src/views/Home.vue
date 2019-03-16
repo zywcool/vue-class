@@ -49,10 +49,7 @@
 			Product
 		},
 		created() {
-			axios.get('/product.json', qs.stringify({
-					id: 1,
-					user: 'admin'
-				}))
+			axios.get('/product.json')
 				.then(res => {
 					console.log(res);
 					this.productList = res.data;
@@ -61,7 +58,12 @@
 
 				})
 				.finally(() => {})
-	}
+				
+				console.log(qs.stringify({
+					id: 1,
+					user: 'admin'
+				}));
+		}
 	}
 </script>
 

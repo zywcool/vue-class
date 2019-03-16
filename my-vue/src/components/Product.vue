@@ -2,7 +2,7 @@
 
 	<div class="product">
 		<div style="background-color: #FFFFFF;">
-			<router-link :to="{path:'/product',query:{id:id}}">
+			<router-link :to="{name:'product',query:{id:id}}">
 				<div class="product-image">
 					<img :src="image" />
 				</div>
