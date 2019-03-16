@@ -45,5 +45,5 @@
 </script>
 
 <style>
-
+	#index {padding-bottom: 1rem;}
 </style>
