@@ -8,6 +8,11 @@
 			
 			<quick-nav></quick-nav>
 			
+			<div class="clear" style="background-color: #ccc;">
+				<product v-for="n in 10" :id="n"></product>
+			</div>
+			
+			
 			<nav-bar></nav-bar>
 	</div>
 
@@ -19,6 +24,7 @@
 	import NavBar from "@/components/Nav.vue";
 	import Swiper from "@/components/Swiper.vue";
 	import QuickNav from "@/components/QuickNav.vue";
+	import Product from "@/components/Product.vue";
 
 	export default {
 		data: function() {
@@ -32,7 +38,8 @@
 			SearchBar,
 			NavBar,
 			Swiper,
-			QuickNav
+			QuickNav,
+			Product
 		}
 	}
 </script>
