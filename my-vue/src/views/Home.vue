@@ -3,7 +3,10 @@
 	<div id="index">
 			<search-bar></search-bar>
 		<!--<h1>京东首页</h1>-->
-			<div style="height: 20rem; background-color: cornflowerblue;"></div>
+		
+			<swiper></swiper>
+			
+			<quick-nav></quick-nav>
 			
 			<nav-bar></nav-bar>
 	</div>
@@ -14,6 +17,8 @@
 	
 	import SearchBar from "@/components/Search.vue";
 	import NavBar from "@/components/Nav.vue";
+	import Swiper from "@/components/Swiper.vue";
+	import QuickNav from "@/components/QuickNav.vue";
 
 	export default {
 		data: function() {
@@ -25,7 +30,9 @@
 		computed: {},
 		components: {
 			SearchBar,
-			NavBar
+			NavBar,
+			Swiper,
+			QuickNav
 		}
 	}
 </script>

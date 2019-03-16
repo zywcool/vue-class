@@ -58,4 +58,9 @@
 		list-style: none;
 	}
 	
+	img{
+		border: 0 none;
+		vertical-align: top;
+	}
+	
 </style>
