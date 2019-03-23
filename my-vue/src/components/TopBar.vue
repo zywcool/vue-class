@@ -2,13 +2,14 @@
 
 	<div class="top-bar flex">
 
-		<div class="top-bar-icon-back"><span></span></div>
+		<div class="top-bar-icon-back" @click="$router.go(-1);"><span></span></div>
 
-		<div class="flex-item">
-
-			<slot></slot>
-
+		<div class="top-bar-nav flex">
+			
+				<slot></slot>
+			
 		</div>
+		
 
 		<div class="top-bar-new-shortcut">
 
@@ -75,6 +76,31 @@
 </script>
 
 <style>
+	.top-bar-nav {
+		flex: 1;
+		margin: 0 1.4rem;
+	    height: .88rem;
+	    font-size: .32rem;
+	    line-height: .88rem;
+	    text-align: center;
+	    color: #333;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	}
+	
+	.top-bar-nav .flex-item span {
+		font-size: .28rem;
+	}
+	
+	.top-bar-nav .flex-item.active span {
+		color: #e4393c;
+		padding-left: 13px;
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAYBAMAAAABjmA/AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAnUExURek7PUdwTO49Peg6Peo6Puc6Pek6POk6POg6POg7PeY8POg6POk6PApBjXgAAAANdFJOU/8ADttQPYvEqJYqW/KuifCQAAAAjklEQVQI10XOsRGCQBAF0D8eA6Imn4ERMh0tgDE2UDqgA2Ij7UA6gA6MjCnB0vzLBlxw92Z379+B/F7DgwQraI3C05AQc0ElfBCac40NOlzIE2LUuJM5gtpHMtPxc+yW1tuH15j8+hYHD1yhdPQoHO3yKG+GSNgbXsI81AocgNS+qlgLFwrrGNjFdFS9tj82HhIeoIR1QQAAAABJRU5ErkJggg==') no-repeat 0;
+		background-size: 0.16rem;
+	}
+	    
+	
 	.top-bar {
 		background-color: #fff;
 		height: 0.9rem;
