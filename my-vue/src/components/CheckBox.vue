@@ -1,6 +1,6 @@
 <template>
 
-	<div class="check-box" :class="{checked:check}" @click="check=!check;">
+	<div class="check-box" :class="{checked:check}" @click="onChange">
 
 	</div>
 
@@ -12,6 +12,76 @@
 		data() {
 			return {
 				check: false,
+				selected: [],
+			}
+		},
+		model: {
+			prop: 'arr',
+			event: 'input'
+		},
+		props: {
+			arr: {
+				type: [Boolean, Array],
+				default: false
+			},
+			value: {
+				default: '',
+			}
+		},
+		watch: {
+			arr(val) {
+				if(typeof val == 'boolean') {
+					this.check = val;
+				} else if(typeof val == 'object') {
+					this.selected = val;
+					
+					let flag = false;
+					this.selected.forEach(item => {
+						if(item == this.value) {
+							flag = true;
+						}
+					})
+					this.check = flag;
+				}
+			}
+		},
+		created() {
+			if(typeof this.arr == 'boolean') {
+				this.check = this.arr;
+			} else if(typeof this.arr == 'object') {
+				this.selected = this.arr;
+				let flag = false;
+				this.selected.forEach(item => {
+					if(item == this.value) {
+						flag = true;
+					}
+				})
+				this.check = flag;
+			}
+		},
+		methods: {
+			onChange() {
+				this.check = !this.check;
+
+				if(this.check) {
+					this.selected.push(this.value);
+				} else {
+					// 删除这个value
+					var index = 0;
+					this.selected.forEach((item, inx) => {
+						if(item == this.value) {
+							index = inx;
+						}
+					});
+
+					this.selected.splice(index, 1);
+				}
+
+				if(typeof this.arr == 'boolean') {
+					this.$emit('input', this.check);
+				} else if(typeof this.arr == 'object') {
+					this.$emit('input', this.selected);
+				}
 			}
 		}
 	}
