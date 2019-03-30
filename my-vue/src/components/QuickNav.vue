@@ -1,59 +1,84 @@
 <template>
-	
-	<div class="quick-nav">
-		<div v-for='(item,index) in list'>
-			<img :src="item.img"/>
-			<p v-text="item.name"></p>
-		</div>
+
+	<div class="quick-nav clear">
+		<router-link :to="item.url" class="quick-nav-item left" v-for="(item,index) in nav" :key="index">
+			<img :src="item.image" />
+			<div class="title" v-text="item.title"></div>
+		</router-link>
 	</div>
-	
+
 </template>
 
 <script>
-	
 	export default {
-		data(){
-			return{
-				list:[{
-					name: '京东超市',
-					img: require("@/assets/images/1.png")
-				},{
-					name: '海囤全球',
-					img: require("@/assets/images/2.png")
-				},{
-					name: '京东服饰',
-					img: require("@/assets/images/3.png")
-				},{
-					name: '京东生鲜',
-					img: require("@/assets/images/4.png")
-				},{
-					name: '京东到家',
-					img: require("@/assets/images/5.png")
-				},{
-					name: '充值缴费',
-					img: require("@/assets/images/6.png")
-				},{
-					name: '9.9元拼',
-					img: require("@/assets/images/7.png")
-				},{
-					name: '领券',
-					img: require("@/assets/images/8.png")
-				},{
-					name: '赚钱',
-					img: require("@/assets/images/9.png")
-				},{
-					name: '全部',
-					img: require("@/assets/images/10.png")
-				}]
-			}
+		data() {
+			return {
+				nav: [{
+					image: require("@/assets/images/1.png"),
+					title: '京东超市',
+					url: '#'
+				}, {
+					image: require("@/assets/images/2.png"),
+					title: '京东超市',
+					url: '#'
+				}, {
+					image: require("@/assets/images/3.png"),
+					title: '京东超市',
+					url: '#'
+				}, {
+					image: require("@/assets/images/4.png"),
+					title: '京东超市',
+					url: '#'
+				}, {
+					image: require("@/assets/images/5.png"),
+					title: '京东超市',
+					url: '#'
+				}, {
+					image: require("@/assets/images/6.png"),
+					title: '京东超市',
+					url: '#'
+				}, {
+					image: require("@/assets/images/7.png"),
+					title: '京东超市',
+					url: '#'
+				}, {
+					image: require("@/assets/images/8.png"),
+					title: '京东超市',
+					url: '#'
+				}, {
+					image: require("@/assets/images/9.png"),
+					title: '京东超市',
+					url: '#'
+				}, {
+					image: require("@/assets/images/10.png"),
+					title: '京东超市',
+					url: '#'
+				}],
+
+			};
 		}
 	}
-	
 </script>
 
 <style>
+	.quick-nav {
+		padding-bottom: 0.2rem;
+	}
 	
-	.quick-nav {width: 100%; display: -webkit-flex; display: flex; flex-wrap: wrap;}
-	.quick-nav > div {width: 20%; text-align: center;}
-	.quick-nav > div > img {width: .8rem; margin-top: .2rem;}
+	.quick-nav-item {
+		text-align: center;
+		width: 20%;
+	}
+	
+	.quick-nav-item img {
+		width: 0.8rem;
+		height: 0.8rem;
+		margin-top: 0.2rem;
+	}
+	
+	.quick-nav-item .title {
+		margin-top: 0.06rem;
+		font-size: 0.24rem;
+		color: #666;
+	}
 </style>

@@ -2,7 +2,8 @@
 
 	<div class="product">
 		<div style="background-color: #FFFFFF;">
-			<router-link :to="{name:'product',query:{id:id}}">
+			<router-link :to="{path:'/product',query:{id:id}}">
+
 				<div class="product-image">
 					<img :src="image" />
 				</div>
@@ -52,7 +53,7 @@
 		background-color: red;
 	}
 	
-	.product {
+	.product-list .product {
 		width: 50%;
 		padding: 0px 2px 4px 0;
 		box-sizing: border-box;
@@ -91,11 +92,10 @@
 		-webkit-box-orient: vertical;
 		word-break: break-word;
 		color: #232326;
-		margin-top: 0.1rem;
 		line-height: 0.32rem;
-		margin-bottom: 0.06rem;
 		padding: 0 0.08rem;
-		background-color: #FFFFFF;
+		margin-top: 0.1rem;
+		margin-bottom: 0.06rem;
 	}
 	
 	.product-price {

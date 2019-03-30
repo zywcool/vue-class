@@ -6,7 +6,6 @@
 			<div class="swiper-slide" v-for="(item,index) in images">
 				<img :src="item.src" />
 			</div>
-			
 		</div>
 		<!-- Add Pagination -->
 		<div class="swiper-pagination"></div>

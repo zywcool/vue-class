@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import TabBar from "@/components/Nav.vue";
+	import TabBar from "@/components/TabBar.vue";
 	export default{
 		
 		
