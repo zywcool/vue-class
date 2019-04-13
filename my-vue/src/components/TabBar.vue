@@ -1,18 +1,18 @@
 <template>
 	<div class="tab-bar">
 		<ul class="flex">
-			<li class="flex-item" :class="{active:navIndex==index}" @click="goTo(index)" v-for="(item,index) in nav" :key="index">
+			<li class="flex-item" v-for="(item,index) in nav" :key="index">
 				<!--
 					path:通过路径进行路由的跳转，参数传递只能用 query
 					name:通过路由的名称进行跳转，参数传递可以用query和params
 				-->
 				<!--<router-link :to="{path:item.url,query:{index:index}}">-->
-				<!--<router-link :to="{name:item.name,query:{index:index},params:{index:index}}">
+				<router-link :to="{name:item.name}">
 					<span :class="item.icon"></span>
 					<div class="title" v-text="item.title"></div>
-				</router-link>-->
-				<span :class="item.icon"></span>
-				<div class="title" v-text="item.title"></div>
+				</router-link>
+				<!--<span :class="item.icon"></span>
+				<div class="title" v-text="item.title"></div>-->
 			</li>
 		</ul>
 	</div>
@@ -113,11 +113,7 @@
 		font-size: 0.48rem;
 	}
 	
-	.tab-bar .active {
-		color: #f23030;
-	}
-	
-	.tab-bar .active a {
+	.tab-bar .router-link-exact-active {
 		color: #f23030;
 	}
 </style>

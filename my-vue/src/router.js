@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import User from './views/User.vue'
 import Category from './views/Category.vue'
 import Search from './views/Search.vue'
+import Result from './views/Result.vue'
 import Shopping from './views/Shopping.vue'
 import Product from './views/Product.vue'
 
@@ -37,6 +38,11 @@ export default new Router({
       path: '/shopping',
       name: 'shopping',
       component: Shopping
+    },
+    {
+      path: '/result',
+      name: 'result',
+      component: Result
     },
     {
       path: '/product',
